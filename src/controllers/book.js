@@ -106,13 +106,13 @@ module.exports = {
       
     }
 
-    Model.bookEdit(data, bookid, (err, result) => {
+    Model.pinjam(data, bookid, (err, result) => {
       if (err) console.log(err)
 
       Helper.response(res, result, 200)
     })
   },
-  kembali: (req, res) => {
+  kembalikan: (req, res) => {
     const bookid = req.params.bookid
 
     const data = {
@@ -120,7 +120,7 @@ module.exports = {
       
     }
 
-    Model.bookEdit(data, bookid, (err, result) => {
+    Model.kembalikan(data, bookid, (err, result) => {
       if (err) console.log(err)
 
       Helper.response(res, result, 200)

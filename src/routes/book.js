@@ -22,7 +22,9 @@ const upload = multer({storage:storage, limits: {fileSize: 100000000}})
     .get('/search/', controller.getBookSearch)
     .get('/:bookid', controller.getBookId)
     .post('/', upload.single('image'),controller.bookPost)
-    .patch('/:bookid', Auth.accessToken, controller.bookEdit)
+    .patch('/:bookid', controller.bookEdit)
+    .patch('/:bookid/pinjam', controller.pinjam)
+    .patch('/:bookid/kembalikan', controller.kembalikan)
     .delete('/:bookid',Auth.accessToken, controller.bookDelete)
 
 module.exports = Route

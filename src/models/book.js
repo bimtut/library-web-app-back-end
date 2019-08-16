@@ -86,6 +86,16 @@ module.exports = {//mencoba memodifikasi menjadi sesuai dengan tabel yang aku bu
     
   
 },
+kembalikan: (data, bookid, callback) => {
+    
+  connection.query("UPDATE `book` SET ? WHERE `book`.`id` = ?", [data, bookid], (err, result) => {
+    if (err) console.log(err)
+
+    callback(err, result)
+  })
+  
+
+},
   bookPost: (input, callback) => {
     
     connection.query("INSERT INTO `book` SET ?", input,  (err, result)=>{
